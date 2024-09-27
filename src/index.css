@@ -1,0 +1,30 @@
+/* Calling Global Styles */
+
+@import './styles/reset.css';
+@import './styles/shared.css';
+@import './App.css';
+
+/* Calling Components */
+
+@import './containers/Header/style.css';
+@import './containers/BluredHeader/style.css';
+@import './components/CartWidget/style.css';
+@import './components/Pill/style.css';
+@import './components/LinkButton/style.css';
+@import './components/LinkButtonSmall/style.css';
+@import './containers/SubNav/style.css';
+@import './components/HeroSpace/style.css';
+@import './components/ItemList/style.css';
+@import './components/Card/style.css';
+@import './components/ProductDetail/style.css';
+@import './components/MainButton/style.css';
+@import './components/CartDetailView/style.css';
+@import './components/CheckoutForm/style.css';
+@import './containers/Footer/style.css';
+
+/* Calling Pages */
+
+@import './pages/Home/style.css';
+@import './pages/Store/style.css';
+@import './pages/Cart/style.css';   
+@import './pages/Checkout/style.css';

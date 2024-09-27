@@ -1,0 +1,101 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .payment-container {
+        width: 100%;
+        background-color: white;
+        padding: 24px 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .form-title {
+            font-size: 16px;
+            margin-bottom: 10px; }
+        .contact-info {
+            padding: 0px 0px 24px 0px;
+        }
+
+        .payment-method {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .method-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .method-option input {
+            margin-right: 10px;
+        }
+        
+        .card-icons img {
+            height: 24px;
+            margin-right: 8px;
+        }
+        
+        .card-icons span {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .credit-card-form {
+            margin-top: 20px;
+        }
+        
+        .input-card, .input-expiration, .input-security, .input-name, .input-phone, .input-email, .input-firstname, .input-lastname, .input-address {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .input-row input {
+            width: 48%;
+        }
+        
+        .checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .checkbox input {
+            margin-right: 10px;
+        }
+        
+        .remember-me {
+            margin-top: 20px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .secure-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .terms-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .terms-text a {
+            color: #6d4e42;
+            text-decoration: none;
+        }

@@ -1,0 +1,120 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+    gap: 1rem;
+    flex-wrap: none;
+    width: 100%;
+    margin: 88px 0px 0px 0px; }
+    .cart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 16px; }
+        .cart-keep-shopping {
+            color: black;
+            transition: .3s; }
+    .cart-item-container {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 16px 48px 16px; }
+        .table-header {
+            display: grid;
+            grid-auto-columns: 2fr 1fr 1fr 1fr;
+            grid-auto-flow: column;
+            border-bottom: 1px #aaaaaa solid;
+            padding-bottom: 6px; }
+            .table-label {
+                font-weight: bold;
+                font-size: 13px; }
+            .text-right {
+                text-align: right; }
+        .checkout-cart-item {
+            display: grid;
+            grid-auto-columns: 2fr 1fr 1fr 1fr;
+            grid-auto-flow: column;
+            padding: 16px 0px;
+            border-bottom: 1px #f1eeee solid; }
+            .checkout-item-info {
+                display: flex;
+                flex-direction: row; }
+            .checkout-img-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: end;
+                float: left;
+                height: 100%;
+                min-height: 175px;
+                border-radius: 4px;
+                border: 1px solid #000000;
+                width: 35%; }
+            .checkout-cart-item img {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                height: 200px;
+                width: 100px;
+                object-fit: cover;
+                image-rendering: smooth; }
+            .checkout-info-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: start;
+                float: left;
+                width: 65%;
+                padding: 0 0 0 16px ; }
+        .checkout-section {
+            position: sticky;
+            top: 16px;
+            background-color: #bcb4b4;
+            border-radius: 8px 0px 0px 0px;
+            display: flex;  
+            flex-direction: column;
+            gap: 32px; 
+            padding: 0px 16px;
+            padding-top: 16px; }
+            .checkout-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center; }
+                .checkout-header-title {
+                    font-size: 36px; }
+                .checkout-counter {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 36px;
+                    height: 36px;
+                    font-size: 20px; 
+                    background-color: #ECE870; 
+                    padding: 4px; 
+                    border-radius: 24px; }
+            .checkout-total {
+                display: flex; 
+                flex-direction: row; 
+                justify-content: space-between;
+                border-bottom: 1px #928a8a solid;
+                margin-bottom: 8px; }
+        .clear-container {
+            display: flex;
+            justify-content: center; }
+            .clear-button {
+                color: #726e6e;
+                text-align: center;
+                border-bottom: 2px #817d7d solid;
+                cursor: pointer; 
+                transition: .3s; }
+                .clear-button:hover {
+                    color: #000000;
+                    border-bottom: 2px #000000 solid; }
+    
+    .checkout-container {
+        display: grid;
+        grid-auto-columns: 3fr 2fr;
+        grid-auto-flow: column; }

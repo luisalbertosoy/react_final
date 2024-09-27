@@ -1,0 +1,14 @@
+.cart-widget {
+    position: relative; }
+    .cart-widget a {
+        cursor: pointer;
+        border-bottom: 2px solid transparent; }
+        .cart-widget a:hover {
+            border-bottom: 2px solid transparent; }
+
+
+
+.cart-icon__cart {
+    font-size: 28px;
+    padding-right: 6px;
+}

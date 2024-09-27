@@ -1,0 +1,10 @@
+.cards-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: none;
+    align-items: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 16px;
+    row-gap: 48px; }

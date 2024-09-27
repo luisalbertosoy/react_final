@@ -1,0 +1,41 @@
+.trend-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+    gap: 1rem;
+    flex-wrap: none;
+    width: 100%;
+    margin: 136px 0px; }
+    .trend-products .trend-info {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: none;
+        gap: 1rem;
+        width: 100%;
+        grid-template-areas: "season year . link";
+        padding: 0 16px; }
+        .trend-products .trend-info .season {
+            grid-area: season;
+            line-height: 5rem; }
+        .trend-products .trend-info .year {
+            grid-area: year;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            line-height: 5rem; }
+
+.btn-container {
+    grid-area: link;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #000000;
+    text-decoration: none;
+    line-height: 2rem; }
+    .btn-container a {
+        font-size: 1rem;
+        color: #000000;
+        text-decoration: none;
+        line-height: 1rem; }

@@ -1,0 +1,62 @@
+.order-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 88px; }
+    .order-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 16px 8px 16px; 
+        /* border-bottom: 1px black solid; */ }
+    .complete-container {
+        display: grid;
+        grid-auto-columns: 2fr 2fr;
+        grid-auto-flow: column; }
+        .form-section {
+            display: flex;
+            flex-direction: column;
+        padding: 0px 16px 64px 16px; }
+        .status-section {
+            position: sticky;
+            top: 4rem;
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 88px);
+            overflow-y: auto;
+            background-color: #bcb4b4;
+            border-radius: 8px 0px 0px 0px;
+            padding: 16px 16px;}
+            .order-item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-bottom: 16px; }
+                .order-item-info {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 16px;}
+                    .order-img-container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        float: left;
+                        background-color: white;
+                        border-radius: 4px;
+                        border: 1px solid #000000;
+                        width: 60px; }
+                        .order-img-container img {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 4px;
+                            height: 90px;
+                            width: 40px;
+                            object-fit: cover; }
+                    .order-total {
+                        display: flex; 
+                        flex-direction: row; 
+                        justify-content: space-between;
+                        border-bottom: 1px #928a8a solid;
+                        padding-top: 16px;
+                        margin-bottom: 8px; }

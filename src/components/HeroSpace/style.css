@@ -1,0 +1,19 @@
+.herospace-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: none;
+    gap: none;
+    flex-wrap: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    background-image: url("../../assets/img/herospace/herospace_index.webp");
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
+    padding-left: 10%;
+    padding-bottom: 10%;
+    position: relative;
+    margin-top: 0;
+    z-index: 10; }

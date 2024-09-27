@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans"), url("../assets/fonts/NHaasGroteskDSPro-55Rg.woff2") format("woff2"), url("../assets/fonts/NHaasGroteskDSPro-55Rg.woff") format("woff"), url("../assets/fonts/NHaasGroteskDSPro-55Rg.ttf") format("truetype"); }
+
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-style: medium;
+    font-weight: 600;
+    src: local("Open Sans"), url("../assets/fonts/NHaasGroteskDSPro-65Md.woff2") format("woff2"), url("../assets/fonts/NHaasGroteskDSPro-65Md.woff") format("woff"), url("../assets/fonts/NHaasGroteskDSPro-65Md.ttf") format("truetype"); }
+
+.font-188 {
+    font-size: 11.75rem;
+    line-height: 9.5rem; }
+
+.font-90 {
+    font-size: 5.625rem;
+    line-height: 5.5rem; }
+
+.font-60 {
+    font-size: 3.75rem;
+    line-height: 4rem; }
+
+.font-28 {
+    font-size: 1.75rem;
+    line-height: 2rem; }
+
+.font-24 {
+    font-size: 1.5rem;
+    line-height: 1.5rem; }
+
+.font-20 {
+    font-size: 1.25rem;
+    line-height: 1.5rem; }
+
+.font-14 {
+    font-size: .875rem;
+    line-height: 1rem; }
+
+.font-12 {
+    font-size: .75rem;
+    line-height: 1rem; }
+
+.font-60-hero {
+    font-size: 3.75rem;
+    line-height: 4rem; }
+
+.font-28-hero {
+    font-size: 1.75rem;
+    line-height: 2rem; }
+
+.lh-28 {
+    line-height: 1.75rem; }
+
+a {
+    font-weight: 500;
+    color: #1D79FF;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #1D79FF;
+}
+
+body {
+    font-family: 'Neue Haas Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%; }
+
+h1 {
+    font-weight: normal; }
+
+::selection {
+    background-color: #1D79FF; }
+
+.bg-aphnblue {
+    background-color: #1D79FF; }
+
+.bg-aphnyellow {
+    background-color: #ECE870; }
+
+.bg-lime {
+    background-color: #DCEAB9; }
+
+.bg-olive {
+    background-color: #605747; }
+
+.bg-bedge {
+    background-color: #d7d8d5; }
+
+.bg-sand {
+    background-color: #d2cdc1; }
+
+.bg-black-p {
+    background-color: #1A1B1D; }
+
+.bg-red {
+    background-color: #D84B35; }
+
+.bg-marine-blue {
+    background-color: #37526F; }
+
+.bg-green {
+    background-color: #017F71; }
+
+.bg-silver {
+    background-color: #C9CBC6; }
+
+.clr-aphnblue {
+    color: #1D79FF; }
+
+.clr-aphnyellow {
+    color: #ECE870; }
+
+.clr-lightgray {
+    color: #F1F1F1; }
+
+.clr-midgray {
+    color: #A1A1A1; }
+
+.aphn-icon {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3; }
+
+.main-container {
+    z-index: 1; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
