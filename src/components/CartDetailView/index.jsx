@@ -49,7 +49,7 @@ const CartDetailView = ({ cartItems }) => {
                             cartItems.slice().reverse().map((item, index) => (
                                 <div key={index} className="cart-item">
                                     <div className="item-img-container">
-                                        <img src={item.thumbnail} alt={item.title} />
+                                        <img src={item.img.thumbnail} alt={item.title} />
                                     </div>
                                     <div className="item-info-container">
                                         <div>

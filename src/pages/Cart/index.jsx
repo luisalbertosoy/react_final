@@ -30,7 +30,7 @@ const Cart = () => {
                         <div key={index} className="checkout-cart-item">
                             <div className="checkout-item-info">
                                 <div className="checkout-img-container">
-                                    <img src={item.thumbnail} alt={item.title} />
+                                    <img src={item.img.thumbnail} alt={item.title} />
                                 </div>
                                 <div className="checkout-info-container">
                                     <div>

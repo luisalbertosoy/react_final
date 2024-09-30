@@ -22,7 +22,7 @@ const Checkout = () => {
                             <div key={index} className="order-item">
                                 <div className="order-item-info">
                                     <div className="order-img-container">
-                                        <img src={item.thumbnail} alt={item.title} />
+                                        <img src={item.img.thumbnail} alt={item.title} />
                                     </div>
                                     <div className="order-info-container">
                                         <div>

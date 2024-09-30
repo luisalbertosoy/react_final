@@ -93,7 +93,7 @@ z-index: 2; }
     .add-module .select-container .size {
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: calc(50% - 8px);
+    width: 174px;
     height: 48px;
     color: #000000;
     background-color: #ffffff;

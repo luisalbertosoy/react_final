@@ -1,16 +1,41 @@
 import aphnIcon from '../../assets/img/brand/aphn_icon.svg';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import MainButton from '../MainButton';
 import { useCart } from '../../context/CartContext';
 import SizeSelector from '../SizeSelector';
 import { useState, useEffect } from 'react';
 import { useViewCart } from '../../context/ViewCartContext';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../config/firebase.config';
 
-const ProductDetail = ({ id, img, division, title, description, sku, materialcolor, materialmade, model, className, price, color, category, href = "#", tag}) => {
+const ProductDetail = () => {
+    const { id } = useParams();
     const { addToCart } = useCart();
     const { openCart } = useViewCart();
+    const [product, setProduct] = useState(null);
     const [selectedSize, setSelectedSize] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const productDoc = await getDoc(doc(db, 'items', id));
+                if (productDoc.exists()) {
+                    setProduct({ id: productDoc.id, ...productDoc.data() });
+                } else {
+                    setError('Product not found');
+                }
+            } catch (err) {
+                setError('Error loading product');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProduct();
+    }, [id]);
 
     const handleSizeChange = (size) => {
         setSelectedSize(size);
@@ -23,80 +48,69 @@ const ProductDetail = ({ id, img, division, title, description, sku, materialcol
             return;
         }
 
-        const product = {
-            id,
-            thumbnail: img.thumbnail, 
-            division, 
-            title,  
-            description, 
-            sku, 
-            materialcolor, 
-            materialmade, 
-            price, 
-            color, 
-            category,
-            size: selectedSize 
+        const productToCart = {
+            ...product,
+            size: selectedSize,
         };
-        addToCart(product);
+        addToCart(productToCart);
         openCart();
-        console.log (product);
+        console.log(productToCart);
     };
 
-    useEffect(() => {
-        if (errorMessage) {
-            console.log('Error message updated:', errorMessage);
-        }
-    }, [errorMessage]);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>{error}</p>;
 
     return (
-        <section className="herospace-product">
-            <div className="aphn-icon">
-                <Link to="/">
-                    <img src={aphnIcon} alt="APHN ICON" />
-                </Link>
-            </div>
-            <div className="tech-info">
-                <div>
-                    <p className="font-12 clr-midgray">{division}</p>
-                    <h1 className="font-20">{title}</h1>
+        product && (
+            <section className="herospace-product">
+                <div className="aphn-icon">
+                    <Link to="/">
+                        <img src={aphnIcon} alt="APHN ICON" />
+                    </Link>
                 </div>
-                <div id="sp-description" className="font-14">
-                    <div dangerouslySetInnerHTML={{ __html: description }}></div>
-                </div>
-                <div id="sp-color" className="font-14">Supplier color: {materialcolor}</div>
-                <div id="sp-description-b" className="font-14">
-                    <div dangerouslySetInnerHTML={{ __html: materialmade }}></div>
-                </div>
-                <div id="sku" className="font-14">{sku}</div>
-            </div>
-            <div className="add-module">
-                <div className="price-color-legal">
+                <div className="tech-info">
                     <div>
-                        <p className="price-d font-20">${price} USD</p>
-                        <div className="product-color bg-olive"></div>
+                        <p className="font-12 clr-midgray">{product.division}</p>
+                        <h1 className="font-20">{product.title}</h1>
                     </div>
-                    <p className="legal-d font-14 clr-midgray">Taxes and duties included.</p>
+                    <div id="sp-description" className="font-14">
+                        <div dangerouslySetInnerHTML={{ __html: product.description }}></div>
+                    </div>
+                    <div id="sp-color" className="font-14">Supplier color: {product.materialcolor}</div>
+                    <div id="sp-description-b" className="font-14">
+                        <div dangerouslySetInnerHTML={{ __html: product.materialmade }}></div>
+                    </div>
+                    <div id="sku" className="font-14">{product.sku}</div>
                 </div>
-                <div className="select-container">
-                    <SizeSelector productId={id} className="size" onSizeChange={handleSizeChange} /> 
-                    <button className="wish">WISHLIST</button>
-                    <MainButton label={"ADD TO BAG"} onClick={handleAddToCart} /* disabled={!selectedSize} */ />
+                <div className="add-module">
+                    <div className="price-color-legal">
+                        <div>
+                            <p className="price-d font-20">${product.price} USD</p>
+                            <div className="product-color bg-olive"></div>
+                        </div>
+                        <p className="legal-d font-14 clr-midgray">Taxes and duties included.</p>
+                    </div>
+                    <div className="select-container">
+                        <SizeSelector productId={id} className="size" onSizeChange={handleSizeChange} /> 
+                        <button className="wish">WISHLIST</button>
+                        <MainButton label={"ADD TO BAG"} onClick={handleAddToCart} />
+                    </div>
+                    {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
+                    <div>
+                        <p className="size-guide">{product.model} <a href="">SIZE GUIDE</a></p>
+                        <p className="shipping-info font-14 clr-midgray">Mexico : Free shipping on orders over $150 USD.</p>
+                    </div>
                 </div>
-                {errorMessage && <p className="error-message" style={{ color: 'red' }}>{errorMessage}</p>}
-                <div>
-                    <p className="size-guide">{model} <a href="">SIZE GUIDE</a></p>
-                    <p className="shipping-info font-14 clr-midgray">Mexico : Free shipping on orders over $150 USD.</p>
+                <div className="sp-gallery">
+                    {product.img?.halffront && <img src={product.img.halffront} alt={`${product.title} - Half Front`} />}
+                    {product.img?.halffrontside && <img src={product.img.halffrontside} alt={`${product.title} - Half Side Front`} />}
+                    {product.img?.halffrontback && <img src={product.img.halffrontback} alt={`${product.title} - Half Side Back`} />}
+                    {product.img?.fullfront && <img src={product.img.fullfront} alt={`${product.title} - Full Front`} />}
+                    {product.img?.dfront && <img src={product.img.dfront} alt={`${product.title} - Detailed Front`} />}
+                    {product.img?.dback && <img src={product.img.dback} alt={`${product.title} - Detailed Back`} />}
                 </div>
-            </div>
-            <div className="sp-gallery">
-                {img && img.halffront && <img src={img.halffront} alt={`${title} - Half Front`} />}
-                {img && img.halffrontside && <img src={img.halffrontside} alt={`${title} - Half Side Front`} />}
-                {img && img.halffrontback && <img src={img.halffrontback} alt={`${title} - Half Side Back`} />}
-                {img && img.fullfront && <img src={img.fullfront} alt={`${title} - Full Front`} />}
-                {img && img.dfront && <img src={img.dfront} alt={`${title} - Detailed Front`} />}
-                {img && img.dback && <img src={img.dback} alt={`${title} - Detailed Back`} />}
-            </div>
-        </section>
+            </section>
+        )
     );
 }
 
