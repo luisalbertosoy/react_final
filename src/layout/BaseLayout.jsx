@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 import Header from "../containers/Header";
 import BluredHeader from "../containers/BluredHeader";
 import SubNav from "../containers/SubNav";
@@ -7,7 +7,7 @@ import { useCart } from "../context/CartContext";
 import { useViewCart } from "../context/ViewCartContext";
 import CartDetailView from "../components/CartDetailView";
 
-const BaseLayout = ({children}) => {
+const BaseLayout = () => {
     const { cart } = useCart();
     const { isCartOpen, closeCart } = useViewCart();
 
@@ -19,7 +19,7 @@ const BaseLayout = ({children}) => {
             <Header />
             {!hideSubNav && <SubNav />}
             <BluredHeader />
-            {children}
+            <Outlet />
             <Footer />
             <CartDetailView isCartOpen={isCartOpen} onClose={closeCart} cartItems={cart} />
         </>

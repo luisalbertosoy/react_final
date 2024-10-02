@@ -12,13 +12,14 @@ const routes = createBrowserRouter([
         element: <BaseLayout />,
         children: [
         { index: true, element: <Home /> },
-        { path: '/store', element: <Store /> },
-        { path: '/detail/:id', element: <SingleProduct /> },
-        { path: '/cart', element: <Cart /> },
-        { path: '/checkout', element: <Checkout /> }
+        { path: 'store', element: <Store /> },
+        { path: 'detail/:id', element: <SingleProduct /> },
+        { path: 'cart', element: <Cart /> },
+        { path: 'checkout', element: <Checkout /> } // Corregido a 'checkout'
         ]
     }
 ]);
 
 export default routes;
+
 
