@@ -1,6 +1,5 @@
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import MainButton from "../../components/MainButton";
 import CheckoutForm from "../../components/CheckoutForm";
 
 const Checkout = () => {

@@ -1,4 +1,4 @@
-import {BrowserRouter,Routes, Route, Link } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import BaseLayout from './layout/BaseLayout.jsx'
 import Home from './pages/Home/index.jsx';
 import Store from './pages/Store/index.jsx';
@@ -15,8 +15,8 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <ViewCartProvider>
+          <ScrollToTop />
           <BaseLayout>
-            <ScrollToTop />
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/store' element={<Store />} />
@@ -31,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
