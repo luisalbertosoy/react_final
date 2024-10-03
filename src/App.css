@@ -3,26 +3,22 @@
     padding: 0;
     box-sizing: border-box; }
 
-/* Estilo inicial (antes de entrar) */
 .fade-enter {
     opacity: 0;
     transform: scale(0.95);
 }
 
-/* Estilo durante la transición de entrada */
 .fade-enter-active {
 opacity: 1;
 transform: scale(1);
 transition: opacity 300ms, transform 300ms;
 }
 
-/* Estilo antes de salir */
 .fade-exit {
 opacity: 1;
 transform: scale(1);
 }
 
-/* Estilo durante la transición de salida */
 .fade-exit-active {
 opacity: 0;
 transform: scale(0.95);

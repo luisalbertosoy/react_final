@@ -5,13 +5,13 @@ import { db } from "../../config/firebase.config";
 
 const WrapperItemList = ({ limit }) => {
     const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true); // Para manejar el estado de carga
-    const [error, setError] = useState(null); // Para manejar errores
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const querySnapshot = await getDocs(collection(db, "items")); // 'items' es el nombre de tu colección en Firestore
+                const querySnapshot = await getDocs(collection(db, "items"));
                 const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 
                 if (limit) {
@@ -30,7 +30,7 @@ const WrapperItemList = ({ limit }) => {
     }, [limit]);
 
     if (loading) {
-        return <p>Cargando...</p>;
+        return <p>Loading...</p>;
     }
 
     if (error) {
