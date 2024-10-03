@@ -1,6 +1,8 @@
-# 🛍️ Ecommerce - Proyecto Final - React JS by Coderhouse
+# 🛍️ Proyecto Final - React JS by Coderhouse
 
-Bienvenido a **Mi proyecto final de React JS**, una tienda en línea desarrollada con ⚡ Vite + React ⚡ 
+Tienda en línea desarrollada con ⚡ Vite + React ⚡ 
+
+[Ver proyecto en línea](https://aphnstore.com/)
 
 ## 🚀 Tecnologías Usadas
 - **Vite + React**: Para una experiencia de desarrollo rápida y eficiente.
@@ -35,6 +37,7 @@ Sigue estos pasos para correr el proyecto localmente:
     VITE_FIREBASE_APP_ID=TU_APP_ID
 
 4. Corre el proyecto en modo de desarrollo:
+    ```bash
     npm run dev
 
 ## 🛠️ Uso
