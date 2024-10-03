@@ -5,6 +5,7 @@ import Store from '../pages/Store/index.jsx';
 import SingleProduct from '../pages/SingleProduct/index.jsx';
 import Cart from '../pages/Cart/index.jsx';
 import Checkout from '../pages/Checkout/index.jsx';
+import Error404 from "../pages/404/index.jsx";
 
 const routes = createBrowserRouter([
     {
@@ -15,7 +16,8 @@ const routes = createBrowserRouter([
         { path: 'store', element: <Store /> },
         { path: 'detail/:id', element: <SingleProduct /> },
         { path: 'cart', element: <Cart /> },
-        { path: 'checkout', element: <Checkout /> } // Corregido a 'checkout'
+        { path: 'checkout', element: <Checkout /> },
+        { path: '*', element: <Error404 /> }
         ]
     }
 ]);
