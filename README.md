@@ -35,6 +35,7 @@ Sigue estos pasos para correr el proyecto localmente:
     VITE_FIREBASE_APP_ID=TU_APP_ID
 
 4. Corre el proyecto en modo de desarrollo:
+    ```bash
     npm run dev
 
 ## 🛠️ Uso
